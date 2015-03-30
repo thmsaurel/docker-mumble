@@ -1,0 +1,16 @@
+###############################################################################
+#
+# File Name         : DockerFile
+# Created By        : Thomas Aurel
+# Creation Date     : March 30th, 2015
+# Version           : 0.1
+# Last Change       : March 30th, 2015 at 21:44:15
+# Last Changed By   : Thomas Aurel
+# Purpose           : docker file for mumble container
+#
+###############################################################################
+# Base system is the Centos version
+from centos:centos7
+
+# Download, extract and install murmur 1.2.8 (mumble server)
+
