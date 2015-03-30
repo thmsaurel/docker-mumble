@@ -4,7 +4,7 @@
 # Created By        : Thomas Aurel
 # Creation Date     : March 30th, 2015
 # Version           : 0.1
-# Last Change       : March 30th, 2015 at 21:44:15
+# Last Change       : March 30th, 2015 at 22:58:01
 # Last Changed By   : Thomas Aurel
 # Purpose           : docker file for mumble container
 #
@@ -12,5 +12,11 @@
 # Base system is the Centos version
 from centos:centos7
 
-# Download, extract and install murmur 1.2.8 (mumble server)
+# install murmur 1.2.8 (mumble server)
+add ./scripts/install_murmur_centos.sh /tmp/install_murmur_centos.sh
+run sh /tmp/install_murmur_centos.sh
 
+# Configuration file
+add ./mumble/murmur.ini /etc/murmur.ini
+add ./mumble/mumble.service /etc/systemd/system/murmur.service
+add ./mumble/murmur.conf /etc/tmpfiles.d/murmur.conf
